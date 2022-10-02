@@ -44,6 +44,9 @@ df=pd.read_csv("jair_papers.csv")
 corpus_sentences = df['title'].values.tolist()
 
 abstract="No query submitted"
+search_results=["Submit your query"]
+if 'search_results' not in st.session_state:
+    st.session_state["search_results"]=search_results
 if 'abstract' not in st.session_state:
     st.session_state["abstract"]=abstract
 with st.form('search_form'):
@@ -63,18 +66,20 @@ with st.form('search_form'):
         search_results=[]
         for hit in hits[0:top_k_hits]:
             search_results.append(corpus_sentences[hit['corpus_id']])
+        st.session_state["search_results"]=search_results
 
         
         
-        title = st.radio(
-                    "What's the title you want to open",
-                    set(search_results),
-                    key="Title")
-        if 'Title' not in st.session_state:
-                st.session_state["Title"]=title
+title = st.radio(
+            "What's the title you want to open",
+            set(st.session_state["search_results"]),
+            key="Title")
+if 'Title' not in st.session_state:
+        st.session_state["Title"]=title
         
         #st.session_state['Title'] = title
-        st.session_state["abstract"]=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
+
+st.session_state["abstract"]=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
  
 st.write(st.session_state["abstract"])
 
