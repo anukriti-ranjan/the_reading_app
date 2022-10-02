@@ -43,7 +43,9 @@ index.set_ef(50)  # ef should always be > top_k_hits
 df=pd.read_csv("jair_papers.csv")
 corpus_sentences = df['title'].values.tolist()
 
-
+abstract="No query submitted"
+if 'abstract' not in st.session_state:
+    st.session_state["abstract"]=abstract
 with st.form('search_form'):
     inp_query = st.text_input('Search your query',"")
     submitted = st.form_submit_button('Submit')
@@ -69,9 +71,12 @@ with st.form('search_form'):
                     set(search_results),
                     key="Title")
         if 'Title' not in st.session_state:
-            st.session_state['Title'] = title
-abstract=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
-st.write(abstract)
+                st.session_state["Title"]=title
+        
+        st.session_state['Title'] = title
+        st.session_state["abstract"]=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
+ 
+st.write(st.session_state["abstract"])
 
 
 
