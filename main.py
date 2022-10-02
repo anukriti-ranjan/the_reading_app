@@ -63,11 +63,19 @@ with st.form('search_form'):
             search_results.append(corpus_sentences[hit['corpus_id']])
 
         
-        while True:
-            title = st.radio(
-                "What's the title you want to open",
-                set(search_results))
-            abstract=df.abstract.values[df.title.values.tolist().index(title)]
+        
+        title = st.radio(
+            "What's the title you want to open",
+            set(search_results),
+            key="Title")
+        if 'Title' not in st.session_state:
+            st.session_state['Title'] = title
+            abstract=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
+            st.write(abstract)
+
+        st.write('first name you have entered:')
+        if 'Title' in st.session_state:
+            abstract=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
             st.write(abstract)
 
 
