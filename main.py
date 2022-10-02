@@ -63,12 +63,12 @@ with st.form('search_form'):
             search_results.append(corpus_sentences[hit['corpus_id']])
 
         
-
-        title = st.radio(
-            "What's the title you want to open",
-            set(search_results))
-        abstract=df.abstract.values[df.title.values.tolist().index(title)]
-        st.write(abstract)
+        while True:
+            title = st.radio(
+                "What's the title you want to open",
+                set(search_results))
+            abstract=df.abstract.values[df.title.values.tolist().index(title)]
+            st.write(abstract)
 
 
 # the sidebar gives 3 options to readers
