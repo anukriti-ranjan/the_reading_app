@@ -78,8 +78,13 @@ if 'Title' not in st.session_state:
         st.session_state["Title"]=title
         
         #st.session_state['Title'] = title
-
-st.session_state["abstract"]=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
+count=1
+try:    
+    st.session_state["abstract"]=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
+ except:
+    
+    st.write(count)
+    count=count+1
  
 st.write(st.session_state["abstract"])
 
