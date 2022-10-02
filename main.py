@@ -73,7 +73,7 @@ with st.form('search_form'):
         if 'Title' not in st.session_state:
                 st.session_state["Title"]=title
         
-        st.session_state['Title'] = title
+        #st.session_state['Title'] = title
         st.session_state["abstract"]=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
  
 st.write(st.session_state["abstract"])
