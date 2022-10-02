@@ -9,15 +9,8 @@ import hnswlib
 import os
 import numpy as np
 
-#pip install --upgrade pip setuptools wheel
-
-#BASE_DIR=Path(__file__).resolve(strict=True).parent
-# Create and retrieve a Cohere API key from os.cohere.ai
-with open('token.txt') as f:
-    cohere_API_key = f.read() 
-
-#API_KEY = st.secrets["cohere_API_key"]
-co = cohere.Client(cohere_API_key)
+API_KEY = st.secrets["cohere_API_key"]
+co = cohere.Client(API_KEY)
 
 def clean_text(s):
     # Turn a Unicode string to plain ASCII
@@ -31,13 +24,15 @@ def clean_text(s):
 
 embedding_size = 1024    #Size of embeddings
 top_k_hits = 30         #Output k hits
+#generated from cohere embed 
+# embeddings of title + abstract of JAIR papers
 corpus_embeddings = np.load('jair_paper_embedings.npy')
 
 
 #ref: https://github.com/UKPLab/sentence-transformers/blob/master/examples/applications/semantic-search/semantic_search_quora_hnswlib.py
 #Defining our hnswlib index
 index_path = "./hnswlib.index"
-#We use Inner Product (dot-product) as Index. We will normalize our vectors to unit length, then is Inner Product equal to cosine similarity
+#We use Inner Product (dot-product) as Index. 
 index = hnswlib.Index(space = 'cosine', dim = embedding_size)
 
 if os.path.exists(index_path):
@@ -73,9 +68,13 @@ with st.form('my_form'):
             "What's the title you want to open",
             set(search_results))
         abstract=df.abstract.values[df.title.values.tolist().index(title)]
+        st.write(abstract)
 
 
-
+# the sidebar gives 3 options to readers
+# 1)to search for meaning internally
+# 2)to generate keywords
+# 3)to test your understanding via questions
 with st.sidebar:
         option = st.selectbox(
                     'Choose',
