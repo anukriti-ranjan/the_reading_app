@@ -70,13 +70,9 @@ with st.form('search_form'):
             key="Title")
         if 'Title' not in st.session_state:
             st.session_state['Title'] = title
-            abstract=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
-            st.write(abstract)
+        abstract=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
+        st.write(abstract)
 
-        st.write('first name you have entered:')
-        if 'Title' in st.session_state:
-            abstract=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
-            st.write(abstract)
 
 
 # the sidebar gives 3 options to readers
