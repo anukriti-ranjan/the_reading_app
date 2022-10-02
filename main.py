@@ -65,13 +65,13 @@ with st.form('search_form'):
         
         
         title = st.radio(
-            "What's the title you want to open",
-            set(search_results),
-            key="Title")
+                    "What's the title you want to open",
+                    set(search_results),
+                    key="Title")
         if 'Title' not in st.session_state:
             st.session_state['Title'] = title
-        abstract=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
-        st.write(abstract)
+abstract=df.abstract.values[df.title.values.tolist().index(st.session_state['Title'])]
+st.write(abstract)
 
 
 
