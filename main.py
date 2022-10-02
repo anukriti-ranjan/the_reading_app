@@ -44,7 +44,7 @@ df=pd.read_csv("jair_papers.csv")
 corpus_sentences = df['title'].values.tolist()
 
 
-with st.form('my_form'):
+with st.form('search_form'):
     inp_query = st.text_input('Search your query',"")
     submitted = st.form_submit_button('Submit')
     if submitted:
@@ -80,7 +80,7 @@ with st.sidebar:
                     'Choose',
                     ('Seek Clarification', 'Generate Keywords', 'Generate Questions'))
         if option=="Seek Clarification":
-            with st.form('my_form'):
+            with st.form('clarification_form'):
                 phrase=st.text_input('Phrase',"")
                 context=st.text_input('Context',"")
                 submitted = st.form_submit_button('Submit')
