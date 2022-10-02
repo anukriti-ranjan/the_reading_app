@@ -43,6 +43,9 @@ index.set_ef(50)  # ef should always be > top_k_hits
 df=pd.read_csv("jair_papers.csv")
 corpus_sentences = df['title'].values.tolist()
 
+st.header('READefine')
+st.subheader("For ease of reading and learning")
+
 abstract="No query submitted"
 search_results=["Submit your query"]
 if 'search_results' not in st.session_state:
