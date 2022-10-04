@@ -1,11 +1,13 @@
-# the_reading_app
+### Introduction
 
 Idea URL: https://docs.google.com/presentation/d/e/2PACX-1vTYgbGSX2NsnfvvIfqTIFVyhTal6ADQ4NAVyuqvgt5oS5A05R0QYFHPHln7a_KI4TbyvGt7A3TWnjrP/pub?start=true&loop=false&delayms=15000
 
 
 App URL: https://anukriti-ranjan-the-reading-app-main-n5ydd6.streamlitapp.com/
 
-The app uses papers from Journal of Artificial Intelligence Research (2008-present) to aid learning. (Only the title and abstract has been fed into the app)
+The app uses papers from Journal of Artificial Intelligence Research (2008-present) to aid reading and learning. (Only the title and abstract has been fed into the app)
+
+### Features
 
 It has three primary sections:
 
