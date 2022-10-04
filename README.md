@@ -5,7 +5,7 @@ Idea URL: https://docs.google.com/presentation/d/e/2PACX-1vTYgbGSX2NsnfvvIfqTIFV
 
 App URL: https://anukriti-ranjan-the-reading-app-main-n5ydd6.streamlitapp.com/
 
-The app uses papers from Journal of Artificial Intelligence Research (2008-present) to aid reading and learning. (Only the title and abstract has been fed into the app)
+The app uses papers from Journal of Artificial Intelligence Research (2008-present) to aid reading and learning. (Only the title and abstract have been fed into the app)
 
 ### Features
 
