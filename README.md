@@ -23,7 +23,7 @@ It has three primary sections:
 ![image](https://user-images.githubusercontent.com/89630232/193471807-6678c832-c36e-4215-beb3-3320558fbe7c.png)
 
 
-3) A network plot of all the papers to check how they cluster and are inter-linked with other papers
+3) A network plot of all the papers to check how they cluster and are inter-linked with other papers. (The plot has been created separately with the embeddings of the JAIR papers generated from cohere)
 
 ![image](https://user-images.githubusercontent.com/89630232/193471834-d7d488fa-2705-44c8-9b7a-372ff66a759a.png)
 
