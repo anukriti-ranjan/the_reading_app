@@ -1,5 +1,7 @@
 ### Introduction
 
+(Prepared as part of data hackathon organised by Cohere and lablab .ai between 30 sept and 2nd Oct 2022)
+
 Idea URL: https://docs.google.com/presentation/d/e/2PACX-1vTYgbGSX2NsnfvvIfqTIFVyhTal6ADQ4NAVyuqvgt5oS5A05R0QYFHPHln7a_KI4TbyvGt7A3TWnjrP/pub?start=true&loop=false&delayms=15000
 
 
